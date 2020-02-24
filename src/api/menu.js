@@ -1,28 +1,29 @@
 import $http from '@/assets/js/http'
 
 export function getMenuForUser() {
-    return $http.post('project/index');
+    return $http.post('device/menu/all-menus');
 }
 
 export function getMenu() {
-    return $http.post('project/menu/menu');
+    // return $http.post('device/menu/menu');
+    return $http.post('device/menu/all-menus');
 }
 
 export function doMenu(data) {
-    let url = 'project/menu/menuAdd';
+    let url = 'device/menu/menuAdd';
     if (data.id) {
-        url = 'project/menu/menuEdit';
+        url = 'device/menu/menuEdit';
     }
     return $http.post(url, data);
 }
 export function forbid(id, status) {
-    return $http.post('project/menu/menuForbid', {id: id, status: status});
+    return $http.post('device/menu/menuForbid', {id: id, status: status});
 }
 
 export function resume(id, status) {
-    return $http.post('project/menu/menuResume', {id: id, status: status});
+    return $http.post('device/menu/menuResume', {id: id, status: status});
 }
 export function delMenu(id) {
-    return $http.post('project/menu/menuDel', {id: id});
+    return $http.post('device/menu/menuDel', {id: id});
 }
 

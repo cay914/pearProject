@@ -245,7 +245,7 @@
                         this.dealDataBeforeLogin(res);
                     }
                     this.loginBtn = false
-                }).catch(() => {
+                }).catch((e) => {
                     this.loginBtn = false
                 });
             },
@@ -365,6 +365,7 @@
                     };
                     let currentOrganization = getStore('currentOrganization', true);
                     const organizationList = res.data.organizationList;
+
                     app.$store.dispatch('SET_LOGGED', obj);
                     app.$store.dispatch('setOrganizationList', organizationList);
                     if (!currentOrganization) {

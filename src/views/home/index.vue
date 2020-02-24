@@ -8,7 +8,9 @@
             <div class="header-content">
                 <div class="left-content">
                     <div class="avatar">
+                        <!--
                         <a-avatar :size="64" :src="userInfo.avatar">{{userInfo.name}}</a-avatar>
+                        -->
                     </div>
                     <div class="user-info">
                         <div class="title">{{helloTime}}{{ userInfo.name }}，祝你开心每一天！</div>

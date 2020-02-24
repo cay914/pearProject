@@ -6,7 +6,8 @@ function resolve(dir) {
 
 const HOST = '127.0.0.1';
 const PORT = '8045';
-const DEV_URL = 'http://127.0.0.1/pearProjectApi/index.php';
+// const DEV_URL = 'http://127.0.0.1:5555';
+const DEV_URL = 'http://zuul.codebattery.top';
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
     productionSourceMap: false,
@@ -32,9 +33,9 @@ module.exports = {
                 target: `${DEV_URL}/`,
                 ws: true,
                 changOrigin: true,
-                pathRewrite: {
-                    '^/api': ''
-                }
+                // pathRewrite: {
+                //     '^/api': ''
+                // }
             }
         },
     },
