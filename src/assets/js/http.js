@@ -11,7 +11,7 @@ const HOME_PAGE = config.HOME_PAGE;
 const crossDomain = config.crossDomain;
 let axiosConfig = {};
 if (crossDomain) {
-    axiosConfig.withCredentials = true;
+    axiosConfig.withCredentials = false;
     axiosConfig.crossDomain = true;
 }
 const $http = Axios.create(axiosConfig);
