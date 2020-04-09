@@ -226,7 +226,7 @@
                 const info = this.$route.meta.info;
                 that.breadCrumbInfo = [];
                 that.breadCrumbInfo.push({title: info.title, 'path': '/' + info.fullUrl});
-                if (!info.is_inner) {
+                if (!info.isInner) {
                     that.openKeys = [];
                     that.selectedKeys = [];
                 }
@@ -266,7 +266,7 @@
                     return false;
                 }
                 that.menus = openKey.children;
-                if (info.is_inner) {
+                if (info.isInner) {
                     return false;
                 }
                 that.menus.forEach(function (v) {

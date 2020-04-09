@@ -26,5 +26,5 @@ export function areasData() {
 }
 
 export function refreshAccessToken(refreshToken) {
-    return $http.post('index/index/refreshAccessToken', {refreshToken: refreshToken});
+    return $http.post('device/token', {refreshToken: refreshToken});
 }
