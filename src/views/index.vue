@@ -66,7 +66,7 @@
                                 @openChange="onOpenChange"
                                 mode="inline">
                             <a-menu-item
-                                    v-if="!menu.children && !menu.is_inner && menu.node != '#'"
+                                    v-if="!menu.children && !menu.isInner && menu.node != '#'"
                                     :key="menu.id"
                                     :disabled="!menu.status"
                             >
@@ -74,7 +74,7 @@
                                 <span>{{menu.title}}</span>
                             </a-menu-item>
                             <a-sub-menu
-                                    v-if="menu.children && !menu.is_inner"
+                                    v-if="menu.children && !menu.isInner"
                                     :key="menu.id.toString()"
                             >
                                 <span slot="title">
@@ -83,7 +83,7 @@
                                 </span>
                                 <a-menu-item
                                         v-for="(secMenu,index) in menu.children"
-                                        v-if="!secMenu.is_inner"
+                                        v-if="!secMenu.isInner"
                                         :key="secMenu.id.toString()"
                                         :disabled="!secMenu.status"
                                 >
@@ -172,7 +172,7 @@
             }),
             layoutClass() {
                 let className = 'layout-' + this.theme;
-                if (!this.$route.meta.info.show_slider) {
+                if (!this.$route.meta.info.showSlider) {
                     className += ' hide';
                 }
                 return className;
@@ -269,7 +269,8 @@
                 if (info.isInner) {
                     return false;
                 }
-                that.menus.forEach(function (v) {
+                openKey.children.forEach(function (v) {
+                    console.log(v)
                     if (v.pid == that.selectedModelKeys) {
                         if (v.children) {
                             v.children.forEach(function (v2) {
